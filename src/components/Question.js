@@ -7,9 +7,16 @@ import { ProgressBar } from './ProgressBar';
 import { Button } from './StyledComponents/Button';
 import { ButtonContainer } from './StyledComponents/ButtonContainer';
 
+export const HeadLineContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
 export const QuestionHeadline = styled.h1`
+  color: #3f55a5;
   font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
+  font-size: 2rem;
+  padding: 0 1.5rem;
 `
 
 export const Question = () => {
@@ -39,21 +46,23 @@ export const Question = () => {
     if (!answer) {
       return false
     } else if (question.correctAnswerIndex === answerIndex) {
-      return '#228B22'
+      return '#ACD1AF'
     } else if (question.correctAnswerIndex !== answerIndex) {
-      return 'red'
+      return '#F47174'
     }
   }
 
   return (
-    <div>
-      <QuestionHeadline>Question: {question.questionText}</QuestionHeadline>
+    <>
+      <HeadLineContainer>
+        <QuestionHeadline>{question.questionText}</QuestionHeadline>
+      </HeadLineContainer>
       <ButtonContainer>
         {question.options.map((option, index) => {
           return <Button background={changeBgButton(index)} disabled={disabled} onClick={() => onAnswerSubmit(question.id, index)} key={option} type="button">{option}</Button>
         })}
       </ButtonContainer>
       <ProgressBar />
-    </div>
+    </>
   )
 }

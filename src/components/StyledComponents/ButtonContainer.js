@@ -5,4 +5,5 @@ export const ButtonContainer = styled.div`
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
+    padding-bottom: 1rem;
 `

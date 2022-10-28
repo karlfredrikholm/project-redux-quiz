@@ -6,12 +6,13 @@ export const ProgressContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  color: #3f55a5;
+  font-family: 'Montserrat', sans-serif;
+  padding-bottom: .8rem;
 
   & progress {
-    color: red;
     height: 3rem;
-    width: 80%;
+    width: 25rem;
     transition: all 500ms ease;
   }
 `
@@ -23,8 +24,8 @@ export const ProgressBar = () => {
       <progress
         id="progress"
         value={question.id}
-        max="7" />
-      <label htmlFor="progress">{question.id} / 6
+        max="11" />
+      <label htmlFor="progress">{question.id} / 10
       </label>
     </ProgressContainer>
   )
